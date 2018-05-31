@@ -10,6 +10,8 @@ import util.io
 class Language:
     extensions = None
     out_extension = None
+    is_text = None
+    line_comment = None
 
     def build(self, inp, out):
         print(inp, '->', out)

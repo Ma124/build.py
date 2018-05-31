@@ -21,6 +21,8 @@ def build(inp, out=None):
     if out is None:
         out = out_name(inp, lang)
 
+    util.io.mkdir(os.path.dirname(out))
+
     tmp = util.io.tmp()
     util.preprocessor.process(lang, inp, tmp)
     # tmp2 = util.io.tmp()
