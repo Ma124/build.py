@@ -13,7 +13,7 @@ def out_name(inp, lang):
 
 def build(inp, out=None):
     n, ext = os.path.splitext(inp)
-    if not ext in main.langs:
+    if ext not in main.langs:
         return
     lang = main.langs[ext]
     if out is None:
