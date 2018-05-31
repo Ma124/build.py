@@ -5,7 +5,12 @@ import util.dynamic
 
 
 class Config:
+    default = 'build'
+
     out = 'out'
+
+    def build(self):
+        pass
 
 
 cfg = None
@@ -37,6 +42,12 @@ def main(n, f=None):
 
     if args.out is not None:
         cfg.out = args.out
+
+    if args.task is None:
+        args.task = cfg.default
+
+    if util.dynamic.iscallable(cfg, args.task):
+        getattr(cfg, args.task).__call__(cfg, *args.args)
 
 
 main(__name__)

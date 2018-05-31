@@ -14,3 +14,12 @@ def load(f, i):
     for attr in dir(mod):
         if not attr.startswith('_'):
             setattr(i, attr, getattr(mod, attr))
+
+
+def iscallable(o, k):
+    f = getattr(o, k, None)
+    if f is None:
+        return False
+    if not hasattr(f, '__call__'):
+        return False
+    return True
