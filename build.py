@@ -48,6 +48,8 @@ def main(n, f=None):
 
     if util.dynamic.iscallable(cfg, args.task):
         getattr(cfg, args.task).__call__(cfg, *args.args)
+    else:
+        print("No task " + args.task)
 
 
 main(__name__)
