@@ -63,7 +63,7 @@ def main(n, f=None):
         l = Language()
         util.dynamic.load(os.path.join('lang', lang + '.py'), l)
         for ext in l.extensions:
-            langs[ext] = l
+            langs[util.fmt_ext(ext)] = l
 
     if util.dynamic.iscallable(cfg, args.task):
         util.builtins.pre(args.task, *args.args)
@@ -73,4 +73,3 @@ def main(n, f=None):
 
 
 main(__name__)
-# langs['.py'] = Language()
