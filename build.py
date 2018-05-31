@@ -4,6 +4,7 @@ import argparse
 import os.path
 import util.dynamic
 import util.builtins
+import util.io
 
 
 class Language:
@@ -12,6 +13,9 @@ class Language:
 
     def build(self, inp, out):
         print(inp, '->', out)
+        with open(inp, 'rb') as inp:
+            with open(out, 'wb') as out:
+                out.write(inp.read())
 
 
 class Config:
@@ -64,6 +68,8 @@ def main(n, f=None):
         util.dynamic.load(os.path.join('lang', lang + '.py'), l)
         for ext in l.extensions:
             langs[util.fmt_ext(ext)] = l
+
+    util.io.mkdir(cfg.out)
 
     if util.dynamic.iscallable(cfg, args.task):
         util.builtins.pre(args.task, *args.args)

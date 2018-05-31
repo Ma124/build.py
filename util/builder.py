@@ -1,5 +1,7 @@
 import os.path
 import util.io
+import util.preprocessor
+# import util.postprocessor
 import build as main
 
 
@@ -18,7 +20,13 @@ def build(inp, out=None):
     lang = main.langs[ext]
     if out is None:
         out = out_name(inp, lang)
-    lang.build(lang, inp, out)
+
+    tmp = util.io.tmp()
+    util.preprocessor.process(lang, inp, tmp)
+    # tmp2 = util.io.tmp()
+    lang.build(lang, tmp, out)
+    # lang.build(lang, tmp, tmp2)
+    # util.postprocessor.process(lang, tmp2, out)
 
 
 def pre_build_task(*args):
