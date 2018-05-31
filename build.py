@@ -11,7 +11,14 @@ class Config:
 cfg = None
 
 
-def main(n=__name__):
+def main(n, f=None):
+    """
+    build.main(__name__, __file__)
+
+    :param n: __name__
+    :param f: __file__
+    """
+
     if n != '__main__':
         return
     global cfg
@@ -22,6 +29,9 @@ def main(n=__name__):
     par.add_argument('args',           action='store',                 nargs='*', help='The arguments for TASK')
     args = par.parse_args()
 
+    if f is not None:
+        args.file = f
+
     cfg = Config()
     util.dynamic.load(args.file, cfg)
 
@@ -29,4 +39,4 @@ def main(n=__name__):
         cfg.out = args.out
 
 
-main()
+main(__name__)

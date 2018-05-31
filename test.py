@@ -2,7 +2,7 @@
 
 import build
 
-build.main(__name__)
+build.main(__name__, __file__)
 
 
 class Config(build.Config):
