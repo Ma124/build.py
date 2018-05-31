@@ -9,7 +9,7 @@ def load(f, i):
     t = type(i)
 
     if hasattr(mod, t.__name__) and issubclass(getattr(mod, t.__name__), t):
-        mod = mod.Config  # could return getattr(mod, t.__name__) but setting attrs in i is for the IDEs
+        mod = getattr(mod, t.__name__)  # could return getattr(mod, t.__name__) but setting attrs in i is for the IDEs
 
     for attr in dir(mod):
         if not attr.startswith('_'):

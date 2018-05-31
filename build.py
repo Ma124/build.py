@@ -1,22 +1,36 @@
 #!/usr/bin/python3
 
 import argparse
+import os.path
 import util.dynamic
+import util.builtins
+
+
+class Language:
+    extensions = None
+    out_extension = None
+
+    def build(self, inp, out):
+        print(inp, '->', out)
 
 
 class Config:
     default = 'build'
-
     out = 'out'
+    languages = []
+    builtins = True
+    preserve_paths = False
 
     def build(self):
         pass
 
 
-cfg = None
+cfg = Config()
+langs = dict()
 
 
 def main(n, f=None):
+    global cfg, langs
     """
     build.main(__name__, __file__)
 
@@ -37,7 +51,6 @@ def main(n, f=None):
     if f is not None:
         args.file = f
 
-    cfg = Config()
     util.dynamic.load(args.file, cfg)
 
     if args.out is not None:
@@ -46,10 +59,18 @@ def main(n, f=None):
     if args.task is None:
         args.task = cfg.default
 
+    for lang in cfg.languages:
+        l = Language()
+        util.dynamic.load(os.path.join('lang', lang + '.py'), l)
+        for ext in l.extensions:
+            langs[ext] = l
+
     if util.dynamic.iscallable(cfg, args.task):
+        util.builtins.pre(args.task, *args.args)
         getattr(cfg, args.task).__call__(cfg, *args.args)
     else:
-        print("No task " + args.task)
+        print("No task named " + args.task + "available.")
 
 
 main(__name__)
+# langs['.py'] = Language()
