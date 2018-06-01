@@ -22,7 +22,6 @@ def build(inp, out=None):
         out = out_name(inp, lang)
 
     util.io.mkdir(os.path.dirname(out))
-    print(out)
 
     tmp = util.io.tmp()
     util.preprocessor.process(lang, inp, tmp)
