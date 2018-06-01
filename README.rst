@@ -22,6 +22,7 @@ Then you can call ``./build.py``
 usage: ``build.py [-h] [-f FILE] [-o OUT] [task] [args [args ...]]``
 
 ***positional arguments***:
+
 +------+--------------------------------+
 | task | The task that should be called |
 +------+--------------------------------+
