@@ -33,10 +33,10 @@ usage: `build.py [-h] [-f FILE] [-o OUT] [task] [args [args ...]]`
 
 ***positional arguments***:
 
-| Option | Description                    |
-|--------|--------------------------------|
-| task   | The task that should be called |
-| args   | The arguments for TASK         |
+| Option   | Description                    |
+|----------|--------------------------------|
+| `task`   | The task that should be called |
+| `args`   | The arguments for TASK         |
 
 ***optional arguments***:
 
