@@ -21,19 +21,9 @@ Then you can call ``./build.py``
 
 usage: ``build.py [-h] [-f FILE] [-o OUT] [task] [args [args ...]]``
 
-positional arguments:
-.. raw:: html
-<table frame="void" rules="none">
-  <tbody valign="top">
-  <tr>
-    <td><kbd>-t<var>ask</var></kbd></td>
-    <td>The task that should be called</td></tr>
-  <tr>
-    <td><kbd>-a<var>rgs</var></kbd></td>
-    <td>The arguments for TASK</td>
-  </tr>
-  </tbody>
-</table>
+| positional arguments:
+|   task                  The task that should be called
+|   args                  The arguments for TASK
 
 optional arguments:
   -h, --help            show this help message and exit
