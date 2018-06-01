@@ -17,20 +17,20 @@ class Config(build.Config):
 # Or remove the class above and put your options here
 ```
 
-Then you can call `./build.py -h`
-usage: build.py [-h] [-f FILE] [-o OUT] [task] [args [args ...]]
+Then you can call `./build.py -h`  
+usage: `build.py [-h] [-f FILE] [-o OUT] [task] [args [args ...]]`
 
-positional arguments:
+***positional arguments***:
 
 | Option | Description                    |
 |--------|--------------------------------|
 | task   | The task that should be called |
 | args   | The arguments for TASK         |
 
-optional arguments:
+***optional arguments***:
 
 | Short   | Long        | Description                     |
-|---------|-------------|---------------------------------|
-| -h      | --help      | Show this help message and exit |
-| -f FILE | --file FILE | The build configuration         |
-| -o OUT  | --out OUT   | The output directory            |
+|-----------|---------------|---------------------------------|
+| `-h`      | `--help`      | Show this help message and exit |
+| `-f FILE` | `--file FILE` | The build configuration         |
+| `-o OUT`  | `--out OUT`   | The output directory            |
