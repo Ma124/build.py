@@ -17,7 +17,7 @@ class Config(build.Config):
 # Or remove the class above and put your options here
 ```
 
-Then you can call `./build.py -h`  
+Then call `./build.py -h`  
 usage: `build.py [-h] [-f FILE] [-o OUT] [task] [args [args ...]]`
 
 ***positional arguments***:
