@@ -13,6 +13,17 @@ build.main(__name__)
 
 class Config(build.Config):
   # Put your options here
+  # Defaults:
+  # Default task:
+  default = 'build'
+  # Default output directory
+  out = 'out'
+  # Whether to preserve paths (`src/dir/file.py` -> `out/dir/file.py` or `out/file.py`) 
+  preserve_paths = True
+  # Languages to compile (`lang/<lang>.py`)
+  languages = []
+  # Enable builtin tasks (build etc.)
+  builtins = True
 
 # Or remove the class above and put your options here
 ```
