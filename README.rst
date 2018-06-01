@@ -25,7 +25,7 @@ usage: ``build.py [-h] [-f FILE] [-o OUT] [task] [args [args ...]]``
 |   task                  The task that should be called
 |   args                  The arguments for TASK
 
-| optional arguments:
-|   -h, --help            show this help message and exit
-|   -f FILE, --file FILE  The build configuration
-|   -o OUT, --out OUT     The output directory
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILE, --file FILE  The build configuration
+  -o OUT, --out OUT     The output directory
