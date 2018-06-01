@@ -25,7 +25,7 @@ class Config:
     out = 'out'
     languages = []
     builtins = True
-    preserve_paths = False
+    preserve_paths = True
 
     def build(self):
         pass
