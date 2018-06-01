@@ -13,11 +13,14 @@ def _txt_process(lang, inp, out):
 
 def _smpl_txt_repl(m):
     globals()['indent'] = m.group(2)
-    s = eval('str(' + m.group(3) + ')\n', {
+    gs = {
         'cfg': build.cfg,
-        'indent': m.group(2),
         'include': include
-    })
+    }
+    for attr in dir(build.cfg):
+        gs[attr] = getattr(build.cfg, attr)
+    print(gs.keys())
+    s = eval('str(' + m.group(3) + ')\n', gs)
     globals().pop('indent')
     return s
 
