@@ -14,7 +14,7 @@ class Language:
     line_comment = None
 
     def build(self, inp, out):
-        print(inp, '->', out)
+        # print(inp, '->', out)
         with open(inp, 'rb') as inp:
             with open(out, 'wb') as out:
                 out.write(inp.read())
