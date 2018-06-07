@@ -1,5 +1,7 @@
 # build.py
 
+* * *
+
 build.py is a simple build system written in python.
 
 Just create a `build.py` with the following content:
